@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 09:52:55 by lauger            #+#    #+#             */
-/*   Updated: 2024/08/29 11:40:19 by lauger           ###   ########.fr       */
+/*   Updated: 2024/08/30 14:05:02 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Weapon.hpp"
 #include <iostream>
 
-HumanA::HumanA(std::string name, Weapon& arm) : _name(name), _weap(arm) {
+HumanA::HumanA(std::string name, Weapon& weap) : _name(name), _weap(weap) {
     // Constructor body, if needed
 }
 

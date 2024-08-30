@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 09:27:07 by lauger            #+#    #+#             */
-/*   Updated: 2024/08/29 11:40:19 by lauger           ###   ########.fr       */
+/*   Updated: 2024/08/30 14:32:59 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,10 @@ Weapon::~Weapon(){
     return ;
 }
 
-void Weapon::setType(std::string type){
-    _type = type;
-    return ;
+const std::string& Weapon::getType() const{
+    return _type;
 }
 
-std::string Weapon::getType() const{
-    return _type;
+void Weapon::setType(const std::string &type){
+    this->_type = type;
 }

@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 11:28:26 by lauger            #+#    #+#             */
-/*   Updated: 2024/08/29 13:14:51 by lauger           ###   ########.fr       */
+/*   Updated: 2024/08/30 14:33:39 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Weapon.hpp"
 #include <iostream>
 
-HumanB::HumanB(std::string name) : _name(name) {
+HumanB::HumanB(std::string name) : _name(name){
     // Constructor body, if needed
 }
 
@@ -35,5 +35,9 @@ void HumanB::setWeapon(Weapon &weap) {
 }
 
 void HumanB::attack() {
-    std::cout << _name << " attacks with their " << _weap->getType() << std::endl;
+   if (_weap) {
+            std::cout << _name << " attacks with their " << _weap->getType() << std::endl;
+        } else {
+            std::cout << _name << " has no weapon to attack with!" << std::endl;
+        }
 }

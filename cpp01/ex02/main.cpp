@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 09:52:40 by marvin            #+#    #+#             */
-/*   Updated: 2024/08/27 09:52:40 by marvin           ###   ########.fr       */
+/*   Updated: 2024/08/30 14:14:16 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int main()
     std::string& ref = str;
 
     std::cout << "String: " << &(str) << std::endl;
+    std::cout << "String: " << (str[0]) << std::endl;
     std::cout << "Pointer: " << &(*ptr) << std::endl;
     std::cout << "Reference: " << &(ref) << std::endl;
 

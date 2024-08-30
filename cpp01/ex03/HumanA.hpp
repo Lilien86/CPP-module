@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 09:52:44 by lauger            #+#    #+#             */
-/*   Updated: 2024/08/29 11:23:02 by lauger           ###   ########.fr       */
+/*   Updated: 2024/08/30 14:02:08 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,11 @@
 
 class HumanA {
 public:
-    HumanA(std::string name, Weapon& arm);
+    HumanA(std::string name, Weapon& weap);
     ~HumanA();
 
     void setName(std::string name);
     std::string getName() const;
-
-    //void setWeapon(std::string weap);
 
     void attack();
 
