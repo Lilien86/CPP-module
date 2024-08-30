@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 08:56:57 by lauger            #+#    #+#             */
-/*   Updated: 2024/08/29 13:21:43 by lauger           ###   ########.fr       */
+/*   Created: 2024/08/29 09:52:55 by lauger            #+#    #+#             */
+/*   Updated: 2024/08/29 11:40:19 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "HumanA.hpp"
-#include "HumanB.hpp"
 #include "Weapon.hpp"
 #include <iostream>
 
-int main()
-{
-    {
-        Weapon club = Weapon("crude spiked club");
-        HumanA bob("Bob", club);
-        bob.attack();
-        club.setType("some other type of club");
-        bob.attack();
-    }
-    {
-        Weapon club = Weapon("crude spiked club");
-        HumanB jim("Jim");
-        jim.setWeapon(club);
-        jim.attack();
-        club.setType("some other type of club");
-        jim.attack();
-    }
-    return 0;
+HumanA::HumanA(std::string name, Weapon& arm) : _name(name), _weap(arm) {
+    // Constructor body, if needed
+}
+
+HumanA::~HumanA() {
+    // Destructor body, if needed
+}
+
+void HumanA::setName(std::string Name) {
+    _name = Name;
+}
+
+std::string HumanA::getName() const {
+    return _name;
+}
+
+void HumanA::attack() {
+    std::cout << _name << " attacks with their " << _weap.getType() << std::endl;
 }

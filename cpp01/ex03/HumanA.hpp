@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 09:01:54 by lauger            #+#    #+#             */
-/*   Updated: 2024/08/29 13:14:05 by lauger           ###   ########.fr       */
+/*   Created: 2024/08/29 09:52:44 by lauger            #+#    #+#             */
+/*   Updated: 2024/08/29 11:23:02 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <string>
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
+
+#include <string>
 #include <iostream>
-# ifndef WEAPON_HPP
-# define WEAPON_HPP
+#include "Weapon.hpp"
 
-class Weapon {
-    public:
-        
-        Weapon(std::string weap);
-        ~Weapon();
-        
-        void setType(std::string type);
-        std::string getType() const;
+class HumanA {
+public:
+    HumanA(std::string name, Weapon& arm);
+    ~HumanA();
 
-    private:
-        std::string *_type;
+    void setName(std::string name);
+    std::string getName() const;
+
+    //void setWeapon(std::string weap);
+
+    void attack();
+
+private:
+    std::string _name;
+    Weapon& _weap;
 };
 
 #endif

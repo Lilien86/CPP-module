@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 08:56:57 by lauger            #+#    #+#             */
-/*   Updated: 2024/08/29 13:21:43 by lauger           ###   ########.fr       */
+/*   Created: 2024/08/29 11:28:26 by lauger            #+#    #+#             */
+/*   Updated: 2024/08/29 13:14:51 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "HumanA.hpp"
 #include "HumanB.hpp"
 #include "Weapon.hpp"
 #include <iostream>
 
-int main()
-{
-    {
-        Weapon club = Weapon("crude spiked club");
-        HumanA bob("Bob", club);
-        bob.attack();
-        club.setType("some other type of club");
-        bob.attack();
-    }
-    {
-        Weapon club = Weapon("crude spiked club");
-        HumanB jim("Jim");
-        jim.setWeapon(club);
-        jim.attack();
-        club.setType("some other type of club");
-        jim.attack();
-    }
-    return 0;
+HumanB::HumanB(std::string name) : _name(name) {
+    // Constructor body, if needed
+}
+
+HumanB::~HumanB() {
+    // Destructor body, if needed
+}
+
+void HumanB::setName(std::string Name) {
+    _name = Name;
+}
+
+std::string HumanB::getName() const {
+    return _name;
+}
+
+void HumanB::setWeapon(Weapon &weap) {
+    _weap = &weap;
+}
+
+void HumanB::attack() {
+    std::cout << _name << " attacks with their " << _weap->getType() << std::endl;
 }
