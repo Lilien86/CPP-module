@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:56:49 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/02 13:42:04 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/03 14:13:29 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,18 @@ Fixed::Fixed() : _intValue(0)
 
 Fixed::Fixed (const int int_value)
 {
-	std::cout << "Int constructor called" << std::endl;
-	this->_intValue = int_value * (1<<this->_bit);
+// 	std::cout << "Int constructor called ";
+// 	std::cout << int_value << std::endl;
+	
+	_intValue = int_value<<this->_bit;
 }
 
 Fixed::Fixed (const float float_value)
 {
-	std::cout << "float constructor called" << std::endl;
-	this->_intValue = float_value * (1<<this->_bit);
+	// std::cout << "float constructor called ";
+	// 	std::cout << float_value << std::endl;
+
+	_intValue = roundf(float_value * (1<<this->_bit));
 }
 
 Fixed::~Fixed()
@@ -36,7 +40,7 @@ Fixed::~Fixed()
 
 Fixed::Fixed (const Fixed &a)
 {
-	*this = a;
+	this->_intValue = a._intValue;
 	std::cout << "Copy constructor called" << std::endl;
 }
 
@@ -52,8 +56,8 @@ int		Fixed::getRawBits(void) const
 
 float	Fixed::toFloat(void) const
 {
-	float fValue = (float)this->_intValue / (1<<this->_bit);
-	return (fValue);
+// 	std::cout << this->_intValue << " after ";
+	return ((float)this->_intValue / (1<<this->_bit));
 }
 
 int	Fixed::toInt(void) const
@@ -70,6 +74,6 @@ Fixed	&Fixed::operator=(Fixed const &rhs)
 
 std::ostream	&operator<<(std::ostream &os, Fixed const &a)
 {
-	os << a.getRawBits();
+	os << a.toFloat();
 	return os;
 }
