@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:56:49 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/03 14:25:29 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/03 14:30:46 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -190,27 +190,27 @@ int	operator!=(Fixed const &a, Fixed const &b)
 int	operator+(Fixed const &a, Fixed const &b)
 {
 	int	res = 0;
-	res = a.getRawBits() + b.getRawBits();
+	res = a.toFloat() + b.toFloat();
 	return (res);
 }
 
 int	operator-(Fixed const &a, Fixed const &b)
 {
 	int	res = 0;
-	res = a.getRawBits() - b.getRawBits();
+	res = a.toFloat() - b.toFloat();
 	return (res);
 }
 
 int	operator*(Fixed const &a, Fixed const &b)
 {
 	int	res = 0;
-	res = a.getRawBits() * b.getRawBits();
+	res = a.toFloat() * b.toFloat();
 	return (res);
 }
 
 int	operator/(Fixed const &a, Fixed const &b)
 {
 	int	res = 0;
-	res = a.getRawBits() / b.getRawBits();
+	res = a.toFloat() / b.toFloat();
 	return (res);
 }
