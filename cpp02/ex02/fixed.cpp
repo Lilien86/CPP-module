@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:56:49 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/03 13:22:03 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/03 14:25:29 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ Fixed::Fixed() : _intValue(0)
 Fixed::Fixed (const int int_value)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->_intValue = int_value<<this->_bit;
+	_intValue = int_value<<this->_bit;
 }
 
 Fixed::Fixed (const float float_value)
 {
 	std::cout << "float constructor called" << std::endl;
-	this->_intValue = float_value * (1<<this->_bit);
+	_intValue = roundf(float_value * (1<<this->_bit));
 }
 
 Fixed::~Fixed()
@@ -56,14 +56,12 @@ int		Fixed::getRawBits(void) const
 
 float	Fixed::toFloat(void) const
 {
-	return (float)(this->_intValue>>this->_bit);
-	
+	return ((float)this->_intValue / (1<<this->_bit));
 }
 
 int	Fixed::toInt(void) const
 {
-	std::cout << this->_intValue << std::endl;
-	return (this->_intValue / (1<<this->_bit));
+	return (round(this->_intValue / (1<<this->_bit)));
 }
 
 Fixed	&Fixed::operator=(Fixed const &rhs)
@@ -137,7 +135,7 @@ int	Fixed::operator--(int)
 
 std::ostream	&operator<<(std::ostream &os, Fixed const &a)
 {
-	os << a.getRawBits();
+	os << a.toFloat();
 	return os;
 }
 

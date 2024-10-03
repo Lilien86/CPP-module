@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:56:49 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/03 14:13:29 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/03 14:18:39 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,13 @@ Fixed::Fixed() : _intValue(0)
 
 Fixed::Fixed (const int int_value)
 {
-// 	std::cout << "Int constructor called ";
-// 	std::cout << int_value << std::endl;
-	
+	std::cout << "Int constructor called" << std::endl;
 	_intValue = int_value<<this->_bit;
 }
 
 Fixed::Fixed (const float float_value)
 {
-	// std::cout << "float constructor called ";
-	// 	std::cout << float_value << std::endl;
-
+	std::cout << "float constructor called" << std::endl;
 	_intValue = roundf(float_value * (1<<this->_bit));
 }
 
@@ -56,7 +52,6 @@ int		Fixed::getRawBits(void) const
 
 float	Fixed::toFloat(void) const
 {
-// 	std::cout << this->_intValue << " after ";
 	return ((float)this->_intValue / (1<<this->_bit));
 }
 
