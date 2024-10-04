@@ -19,7 +19,7 @@ Point::Point()
 
 Point::Point(Fixed const &a, Fixed const &b)
 {
-    x.setRawBits(a.getRawBits());
+    this->set(a.getRawBits(), b.getRawBits());
 }
 
 Point::Point(Point const &a)
@@ -28,12 +28,12 @@ Point::Point(Point const &a)
     std::cout << "Copy Point constructor called" << std::endl;
 }
 
-int     Point::getX()
+int     Point::getX() const
 {
     return x.getRawBits();
 }
 
-int     Point::getY()
+int     Point::getY() const
 {
     return y.getRawBits();
 }
@@ -48,8 +48,7 @@ void    Point::set(int const x, int const y)
 //#############OOOOOOOOOOOOOOOOPERATOR#########################
 //#############################################################
 
-Point   Point::&operator=(const Point &a)
+Point   &Point::operator=(const Point &a)
 {
-    this->x = a.getX();
-    this->y = a.getY();
+    this->set(a.x.getRawBits(), a.y.getRawBits());
 }
