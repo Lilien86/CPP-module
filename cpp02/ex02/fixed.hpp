@@ -33,10 +33,10 @@ class Fixed
 		static const Fixed &min(const Fixed &a, const Fixed &b);
 		static const Fixed &max(const Fixed &a, const Fixed &b);
 
-		int &operator++();
-		int operator++(int);
-		int &operator--();
-		int operator--(int);
+		Fixed &operator++();
+		Fixed operator++(int);
+		Fixed &operator--();
+		Fixed operator--(int);
 
 		int getRawBits(void) const;
 		void setRawBits(int const raw);

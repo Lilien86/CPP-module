@@ -64,68 +64,35 @@ int	Fixed::toInt(void) const
 	return this->_intValue >> this->_bit;
 }
 
+//#############################################################
+//#############################################################
+//#############################################################
 
-Fixed	&Fixed::min(Fixed &a, Fixed &b)
-{
-	if (a._intValue < b._intValue)
-		return (a);
-	else
-		return (b);
-}
-
-Fixed	&Fixed::max(Fixed &a, Fixed &b)
-{
-	if (a._intValue > b._intValue)
-		return (a);
-	else
-		return (b);
-}
-
-const Fixed	&Fixed::min(const Fixed &a, const Fixed &b)
-{
-	if (a._intValue < b._intValue)
-		return (a);
-	else
-		return (b);
-}
-
-const Fixed	&Fixed::max(const Fixed &a, const Fixed &b)
-{
-	if (a._intValue > b._intValue)
-		return (a);
-	else
-		return (b);
-}
-
-int	&Fixed::operator++()
+Fixed &Fixed::operator++()
 {
 	this->_intValue++;
-	return (this->_intValue);
+	return (*this);
 }
 
-int	Fixed::operator++(int)
+Fixed	Fixed::operator++(int)
 {
 	Fixed tmp(*this);
 	this->_intValue++;
-	return (tmp._intValue);
+	return (tmp);
 }
 
-int	&Fixed::operator--()
+Fixed	&Fixed::operator--()
 {
 	this->_intValue--;
-	return (this->_intValue);
+	return (*this);
 }
 
-int	Fixed::operator--(int)
+Fixed	Fixed::operator--(int)
 {
 	Fixed const tmp(*this);
 	this->_intValue--;
-	return (tmp._intValue);
+	return (tmp);
 }
-
-//#############################################################
-//#############################################################
-//#############################################################
 
 Fixed	&Fixed::operator=(Fixed const &rhs)
 {
@@ -169,7 +136,9 @@ bool	Fixed::operator!=(Fixed const &a)
 	return (this->_intValue != a.getRawBits());
 }
 
-//####################
+//#############################################################
+//#############################################################
+//#############################################################
 
 Fixed	Fixed::operator+(Fixed const &a)
 {
@@ -189,4 +158,28 @@ Fixed	Fixed::operator*(Fixed const &a)
 Fixed	Fixed::operator/(Fixed const &a)
 {
 	return Fixed(this->toFloat() / a.toFloat());
+}
+
+//#############################################################
+//#############################################################
+//#############################################################
+
+Fixed	&Fixed::min(Fixed &a, Fixed &b)
+{
+	return a < b ? a : b;
+}
+
+Fixed	&Fixed::max(Fixed &a, Fixed &b)
+{
+	return a > b ? a : b;
+}
+
+const Fixed	&Fixed::min(const Fixed &a, const Fixed &b)
+{
+	return (Fixed &)a < b ? a : b;
+}
+
+const Fixed	&Fixed::max(const Fixed &a, const Fixed &b)
+{
+	return (Fixed &)a > b ? a : b;
 }
