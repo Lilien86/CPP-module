@@ -12,14 +12,14 @@
 
 #include "./Point.hpp"
 
-Point::Point()
+Point::Point() : _x(0), _y(0)
 {
     std::cout << "Default Point constructor called" << std::endl;
 }
 
-Point::Point(Fixed const &a, Fixed const &b)
+Point::Point(float const x, float const y) : _x(x), _y(y)
 {
-    this->set(a.getRawBits(), b.getRawBits());
+    std::cout << "Cpy calue Point constructor called" << std::endl;
 }
 
 Point::Point(Point const &a)
@@ -28,20 +28,19 @@ Point::Point(Point const &a)
     std::cout << "Copy Point constructor called" << std::endl;
 }
 
-int     Point::getX() const
+Point::~Point()
 {
-    return x.getRawBits();
+    std::cout << "Destructor Point constructor called" << std::endl;
 }
 
-int     Point::getY() const
+Fixed     Point::getX() const
 {
-    return y.getRawBits();
+    return this->_x;
 }
 
-void    Point::set(int const x, int const y)
+Fixed     Point::getY() const
 {
-    this->x.setRawBits(x);
-    this->y.setRawBits(y);
+    return this->_y;
 }
 
 //#############################################################
@@ -50,5 +49,7 @@ void    Point::set(int const x, int const y)
 
 Point   &Point::operator=(const Point &a)
 {
-    this->set(a.x.getRawBits(), a.y.getRawBits());
+    (Fixed)this->_x = a.getX();
+    (Fixed)this->_y = a.getY();
+    return *this;
 }

@@ -10,15 +10,13 @@ YELLOW = \033[0;33m
 RED = \033[0;31m
 NC = \033[0m
 
-SRC = fixed.cpp main.cpp
+SRC = fixed.cpp Point.cpp main.cpp bsp.cpp
 
 OBJ_DIR = ./obj
 OBJ = $(SRC:./src/%.c=$(OBJ_DIR)/%.o)
 
 all: $(NAME)
 
-$(LIBFT_LIBRARY):
-	/bin/make --quiet -C $(LIBFT)
 
 $(NAME): $(OBJ)
 	@echo

@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 11:10:50 by lauger            #+#    #+#             */
-/*   Updated: 2024/10/03 14:24:57 by lauger           ###   ########.fr       */
+/*   Created: 2024/10/07 09:10:30 by marvin            #+#    #+#             */
+/*   Updated: 2024/10/07 09:10:30 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "fixed.hpp"
+#include "Point.hpp"
 
-int main( void )
+int main()
 {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	return 0;
+    float const one = 5.5f;
+    float const two = 1.5f;
+
+    Point const   a;
+    Point const   b(one, two);
+    Point const   c(a);
+    Point const   point(one, two);
+    bsp(a,b,c,point);
+
+    return (0);
 }
