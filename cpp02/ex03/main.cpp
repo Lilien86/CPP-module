@@ -13,15 +13,13 @@
 #include "fixed.hpp"
 #include "Point.hpp"
 
+
 int main()
 {
-    float const one = 5.5f;
-    float const two = 1.5f;
-
-    Point const   a;
-    Point const   b(one, two);
-    Point const   c(a);
-    Point const   point(one, two);
+    Point	a(-5, -5);
+	Point	b( 5, -5);
+	Point	c( 0,  5);
+    Point   point(3, 1);
     bsp(a,b,c,point);
 
     return (0);
