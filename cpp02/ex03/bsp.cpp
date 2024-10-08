@@ -18,13 +18,13 @@ float   area(int x1, int y1, int x2, int y2, int x3, int y3)
     return abs((x1*(y2-y3) + x2*(y3-y1) + x3*(y1-y2)) / 2.0);
 }
 
-void    printPoint(Point const &p)
+void    printPoint(Point const p)
 {
     std::cout << "x = " << p.getX() << std::endl;
     std::cout << "y = " << p.getY() << std::endl;
 }
 
-bool bsp( Point a, Point b, Point c, Point point)
+bool bsp( Point const a, Point const b, Point const c, Point const point)
 {
     printPoint(b);
     float A = area(a.getX().getRawBits(), a.getY().getRawBits(), b.getX().getRawBits(), b.getY().getRawBits(),
