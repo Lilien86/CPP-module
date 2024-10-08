@@ -17,9 +17,6 @@ OBJ = $(SRC:./src/%.c=$(OBJ_DIR)/%.o)
 
 all: $(NAME)
 
-$(LIBFT_LIBRARY):
-	/bin/make --quiet -C $(LIBFT)
-
 $(NAME): $(OBJ)
 	@echo
 	@echo "$(YELLOW)Compiling source files...$(NC)"
