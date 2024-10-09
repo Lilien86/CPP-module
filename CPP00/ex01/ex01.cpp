@@ -127,7 +127,8 @@ void PhoneBook::searchContacts(void)
 	}
 }
 
-int main() {
+int main()
+{
 	PhoneBook phoneBook;
 	std::string command;
 
@@ -142,7 +143,6 @@ int main() {
 			phoneBook.addContact();
 		} else if (command == "SEARCH") {
 			phoneBook.searchContacts();
-			//break;
 		} else if (command == "EXIT") {
 			break;
 		} else {
