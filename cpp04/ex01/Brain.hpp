@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 09:35:43 by lauger            #+#    #+#             */
-/*   Updated: 2024/10/10 10:36:51 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/10 11:28:57 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 # define BRAIN_HPP
 # include <string>
 #include <iostream>
+#include <stdlib.h>
 
 class Brain
 {
 	private:
-		std::string	_knowledge;
+		std::string	*_knowledge;
 	public:
 		Brain();
 		~Brain();

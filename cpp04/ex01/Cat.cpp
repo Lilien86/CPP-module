@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:35:16 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/10 10:07:00 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/10 11:34:32 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Cat::Cat()
 Cat::~Cat()
 {
 	std::cout << "Cat Destructor" << std::endl;
-	//delete(_brain);
+	delete(_brain);
 }
 
 void    Cat::makeSound() const

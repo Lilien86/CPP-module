@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:33:18 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/10 09:19:38 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/10 11:51:02 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,10 @@ std::string Animal::getType() const
 void    Animal::makeSound() const
 {
     std::cout << "Animal" << " ~ brrrrrrr ~" << std::endl;
+}
+
+void operator delete(void * p)
+{
+    (void)p;
+    return ;
 }
