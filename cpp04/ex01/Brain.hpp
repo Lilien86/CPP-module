@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 10:54:25 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/10 09:31:25 by lauger           ###   ########.fr       */
+/*   Created: 2024/10/10 09:35:43 by lauger            #+#    #+#             */
+/*   Updated: 2024/10/10 10:36:51 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./Animal.hpp"
-#include "./Dog.hpp"
-#include "./Cat.hpp"
+# ifndef BRAIN_HPP
+# define BRAIN_HPP
+# include <string>
+#include <iostream>
 
-int main()
+class Brain
 {
-const Animal* meta = new Animal();
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-i->makeSound(); //will output the cat sound!
-j->makeSound();
-meta->makeSound();
-return 0;
-}
+	private:
+		std::string	_knowledge;
+	public:
+		Brain();
+		~Brain();
+		static void *operator new(size_t);
+		static void operator delete(void * p);
+};
+
+#endif

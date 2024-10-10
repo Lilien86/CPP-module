@@ -5,24 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 10:54:25 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/10 09:31:25 by lauger           ###   ########.fr       */
+/*   Created: 2024/10/10 09:43:19 by lauger            #+#    #+#             */
+/*   Updated: 2024/10/10 10:02:59 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./Animal.hpp"
-#include "./Dog.hpp"
-#include "./Cat.hpp"
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "Brain.hpp"
 
 int main()
 {
-const Animal* meta = new Animal();
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-i->makeSound(); //will output the cat sound!
-j->makeSound();
-meta->makeSound();
-return 0;
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	j->makeSound();
+	i->makeSound();
+	return 0;
 }

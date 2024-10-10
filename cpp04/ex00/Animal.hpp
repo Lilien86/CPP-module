@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:29:00 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/09 10:29:00 by marvin           ###   ########.fr       */
+/*   Updated: 2024/10/10 09:17:49 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Animal
         Animal();
         ~Animal();
         std::string getType() const;
-        void makeSound() const;
+        virtual void makeSound() const;
 };
 
 #endif

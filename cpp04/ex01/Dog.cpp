@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 10:54:25 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/10 09:31:25 by lauger           ###   ########.fr       */
+/*   Created: 2024/10/09 10:35:16 by marvin            #+#    #+#             */
+/*   Updated: 2024/10/10 10:03:29 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./Animal.hpp"
-#include "./Dog.hpp"
-#include "./Cat.hpp"
+#include "Dog.hpp"
 
-int main()
+Dog::Dog()
 {
-const Animal* meta = new Animal();
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-i->makeSound(); //will output the cat sound!
-j->makeSound();
-meta->makeSound();
-return 0;
+	std::cout << "Dog Constructor" << std::endl;
+	this->_type = "Dog";
+	_brain = new (Brain);
+}
+
+Dog::~Dog()
+{
+	std::cout << "Dog Destructor" << std::endl;
+	//delete (_brain);
+}
+
+void    Dog::makeSound() const
+{
+	std::cout << this->_type << " ~ waouffff ~" << std::endl;
 }
