@@ -10,7 +10,7 @@ YELLOW = \033[0;33m~
 RED = \033[0;31m
 NC = \033[0m
 
-SRC = main.cpp Zombie.cpp ZombieHorde.cpp
+SRC = main.cpp Zombie.cpp zombieHorde.cpp
 
 OBJ_DIR = ./obj
 OBJ = $(SRC:./src/%.c=$(OBJ_DIR)/%.o)

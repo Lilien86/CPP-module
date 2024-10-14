@@ -4,21 +4,12 @@ CC = c++
 
 CFLAGS = -Wextra -Werror -Wall -std=c++98 -g
 
-
-GREEN = \033[0;32m
-YELLOW = \033[0;33m~
-RED = \033[0;31m
-NC = \033[0m
-
 SRC = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 
 OBJ_DIR = ./obj
 OBJ = $(SRC:./src/%.c=$(OBJ_DIR)/%.o)
 
 all: $(NAME)
-
-$(LIBFT_LIBRARY):
-	/bin/make --quiet -C $(LIBFT)
 
 $(NAME): $(OBJ)
 	@echo

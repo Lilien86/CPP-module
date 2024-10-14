@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 08:42:52 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/09 08:42:52 by marvin           ###   ########.fr       */
+/*   Updated: 2024/10/14 11:46:46 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@ FragTrap::FragTrap(const std::string& name): ClapTrap(name)
     std::cout << "FragTrap name Constructor" << std::endl;
 }
 
+FragTrap::FragTrap(const FragTrap &rhs)
+{
+    *this = rhs;
+}
+
 FragTrap::~FragTrap()
 {
     std::cout << "FragTrap Destructor" << std::endl;
@@ -37,4 +42,10 @@ FragTrap::~FragTrap()
 void    FragTrap::highFivesGuys(void)
 {
     std::cout << "Hello world, can we do high five together, please" << std::endl;
+}
+
+FragTrap &FragTrap::operator=(const FragTrap &rhs)
+{
+    *this = rhs;
+    return (*this);
 }

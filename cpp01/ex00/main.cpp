@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 08:53:53 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/09 10:03:42 by marvin           ###   ########.fr       */
+/*   Updated: 2024/10/14 09:40:23 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int main()
 {
-    Zombie stackZombie("Stack Zombie");
-    stackZombie.announce();
+	Zombie stackZombie("Stack Zombie");
+	stackZombie.announce();
 
-    stackZombie.randomChump("Random Chump");
+	stackZombie.randomChump("Random Chump");
 
-    Zombie* heapZombie = stackZombie.newZombie("Heap Zombie");
-    heapZombie->announce();
+	Zombie* heapZombie = stackZombie.newZombie("Heap Zombie");
+	heapZombie->announce();
 
-    delete heapZombie;
-    return 0;
+	delete heapZombie;
+	return 0;
 }
