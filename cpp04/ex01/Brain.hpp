@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 09:35:43 by lauger            #+#    #+#             */
-/*   Updated: 2024/10/14 14:39:34 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/14 16:23:32 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class Brain
 		Brain(const Brain &rhs);
 		~Brain();
 		Brain &operator=(const Brain &rhs);
-		void newBrain();
 };
 
 #endif

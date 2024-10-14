@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:35:16 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/14 14:58:08 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/14 16:31:36 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Cat::Cat()
 {
 	std::cout << "Cat Constructor" << std::endl;
 	this->_type = "Cat";
-	this->_brain->newBrain();
+	this->_brain = new Brain();
 }
 
 Cat::Cat(const Cat &rhs)

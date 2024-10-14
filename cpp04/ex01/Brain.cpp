@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 09:39:09 by lauger            #+#    #+#             */
-/*   Updated: 2024/10/14 15:35:28 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/14 16:24:36 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 Brain::Brain()
 {
 	std::cout << "Brain is create" << std::endl;
+	for (int i = 0; i < 100; i++)
+	{
+		_knowledge[i] = "";
+	}
 }
 
 Brain::Brain(const Brain &rhs)
@@ -34,14 +38,4 @@ Brain &Brain::operator=(const Brain &rhs)
 		this->_knowledge[i] = rhs._knowledge[i];
 	}
 	return (*this);
-}
-
-void    Brain::newBrain()
-{
-	std::cout << "here" << std::endl;
-	for (int i = 0; i < 100; i++)
-	{
-		std::cout << i << std::endl;
-		this->_knowledge[i] = "\0";
-	}
 }
