@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 09:43:19 by lauger            #+#    #+#             */
-/*   Updated: 2024/10/10 11:47:01 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/14 14:29:20 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@ int main()
 	const Animal* i = new Cat();
 	j->makeSound();
 	i->makeSound();
-	delete(i);
 	return 0;
 }

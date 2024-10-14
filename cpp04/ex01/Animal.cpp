@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:33:18 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/14 13:21:40 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/14 14:59:37 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Animal::~Animal()
 
 Animal &Animal::operator=(const Animal &rhs)
 {
-	*this = rhs;
+	this->_type = rhs._type;
 	return (*this);
 }
 
@@ -43,9 +43,3 @@ void    Animal::makeSound() const
 	std::cout << "Animal" << " ~ brrrrrrr ~" << std::endl;
 }
 
-
-void operator delete(void * p)
-{
-	(void)p;
-	return ;
-}

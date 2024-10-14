@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:29:00 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/14 13:21:21 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/14 15:04:58 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,9 @@ class Animal
 		Animal();
 		Animal(const Animal &rhs);
 		~Animal();
-		Animal &operator=(const Animal &rhs);
+		virtual Animal &operator=(const Animal &rhs);
 		std::string getType() const;
 		virtual void makeSound() const;
-		static void operator delete(void * p);
 		
 };
 

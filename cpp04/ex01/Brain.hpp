@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 09:35:43 by lauger            #+#    #+#             */
-/*   Updated: 2024/10/14 13:24:20 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/14 14:39:34 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@
 
 class Brain
 {
-	private:
-		std::string	*_knowledge;
 	public:
+		std::string	_knowledge[100];
 		Brain();
+		Brain(const Brain &rhs);
 		~Brain();
-		static void *operator new(size_t);
-		static void operator delete(void * p);
+		Brain &operator=(const Brain &rhs);
+		void newBrain();
 };
 
 #endif

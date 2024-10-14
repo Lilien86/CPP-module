@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:35:16 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/14 13:23:09 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/14 14:57:47 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ Dog::Dog()
 {
 	std::cout << "Dog Constructor" << std::endl;
 	this->_type = "Dog";
+	this->_brain->newBrain();
 }
 
 Dog::Dog(const Dog &rhs)
@@ -30,7 +31,10 @@ Dog::~Dog()
 
 Dog &Dog::operator=(const Dog &rhs)
 {
-	*this = rhs;
+	for (int i = 0; i < 100; i++)
+	{
+		this->_brain->_knowledge[i] =	rhs._brain->_knowledge[i];
+	}
 	return (*this);
 }
 
