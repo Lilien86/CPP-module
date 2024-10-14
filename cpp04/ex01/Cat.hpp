@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:35:18 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/10 10:01:34 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/14 13:21:54 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ class Cat: public Animal
 		Brain *_brain;
 	public:
 		Cat();
+		Cat(const Cat &rhs);
 		~Cat();
+		Cat &operator=(const Cat &rhs);
 		void makeSound() const;
 };
 

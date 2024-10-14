@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:35:16 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/10 11:34:32 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/14 13:22:04 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,27 @@
 
 Cat::Cat()
 {
-	std::cout << "Cat Constructor" << std::endl;
-	this->_type = "Cat";
-	_brain = new (Brain);
-	//_brain = NULL;
+    std::cout << "Cat Constructor" << std::endl;
+    this->_type = "Cat";
+}
+
+Cat::Cat(const Cat &rhs)
+{
+    *this = rhs;
 }
 
 Cat::~Cat()
 {
-	std::cout << "Cat Destructor" << std::endl;
-	delete(_brain);
+    std::cout << "Cat Destructor" << std::endl;
+}
+
+Cat &Cat::operator=(const Cat &rhs)
+{
+    *this = rhs;
+    return (*this);
 }
 
 void    Cat::makeSound() const
 {
-	std::cout << this->_type << " ~ miaouuuu ~" << std::endl;
+    std::cout << this->_type << " ~ miaouuuu ~" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:35:16 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/10 10:03:29 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/14 13:23:09 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,22 @@ Dog::Dog()
 {
 	std::cout << "Dog Constructor" << std::endl;
 	this->_type = "Dog";
-	_brain = new (Brain);
+}
+
+Dog::Dog(const Dog &rhs)
+{
+	*this = rhs;
 }
 
 Dog::~Dog()
 {
 	std::cout << "Dog Destructor" << std::endl;
-	//delete (_brain);
+}
+
+Dog &Dog::operator=(const Dog &rhs)
+{
+	*this = rhs;
+	return (*this);
 }
 
 void    Dog::makeSound() const
