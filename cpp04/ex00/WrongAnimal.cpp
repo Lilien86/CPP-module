@@ -14,20 +14,31 @@
 
 WrongAnimal::WrongAnimal()
 {
-    std::cout << "WrongAnimal Constructor" << std::endl;
+	std::cout << "WrongAnimal Constructor" << std::endl;
+}
+
+WrongAnimal::WrongAnimal(const WrongAnimal &rhs)
+{
+	*this = rhs;
 }
 
 WrongAnimal::~WrongAnimal()
 {
-    std::cout << "WrongAnimal Destructor" << std::endl;
+	std::cout << "WrongAnimal Destructor" << std::endl;
+}
+
+WrongAnimal &WrongAnimal::operator=(const WrongAnimal &rhs)
+{
+	*this = rhs;
+	return (*this);
 }
 
 std::string WrongAnimal::getType() const
 {
-    return this->_type;
+	return this->_type;
 }
 
 void    WrongAnimal::makeSound() const
 {
-    std::cout << "WrongAnimal" << " ~ brrrrrrr ~" << std::endl;
+	std::cout << "WrongAnimal" << " ~ brrrrrrr ~" << std::endl;
 }

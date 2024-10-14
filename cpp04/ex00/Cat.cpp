@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:35:16 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/10 09:19:47 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/14 11:58:14 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,20 @@ Cat::Cat()
     this->_type = "Cat";
 }
 
+Cat::Cat(const Cat &rhs)
+{
+    *this = rhs;
+}
+
 Cat::~Cat()
 {
     std::cout << "Cat Destructor" << std::endl;
+}
+
+Cat &Cat::operator=(const Cat &rhs)
+{
+    *this = rhs;
+    return (*this);
 }
 
 void    Cat::makeSound() const

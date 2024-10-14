@@ -18,9 +18,20 @@ WrongCat::WrongCat()
 	this->_type = "WrongCat";
 }
 
+WrongCat::WrongCat(const WrongCat &rhs)
+{
+	*this = rhs;
+}
+
 WrongCat::~WrongCat()
 {
 	std::cout << "WrongCat Destructor" << std::endl;
+}
+
+WrongCat &WrongCat::operator=(const WrongCat &rhs)
+{
+	*this = rhs;
+	return (*this);
 }
 
 void    WrongCat::makeSound() const
