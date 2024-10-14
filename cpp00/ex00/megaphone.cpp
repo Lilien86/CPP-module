@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/23 14:38:51 by lauger            #+#    #+#             */
-/*   Updated: 2024/08/25 10:57:48 by lauger           ###   ########.fr       */
+/*   Created: 2024/08/23 11:31:39 by lauger            #+#    #+#             */
+/*   Updated: 2024/10/14 09:08:36 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
-#endif
-#include "contact.hpp"
+#include <iostream>
+#include <locale>
 
-class PhoneBook
+int main (int argc, char* argv[])
 {
-    private:
-        Contact cont[8];
-        int nextIndex;
-    public:
-        PhoneBook(void);
-        ~PhoneBook(void);
-        void addContact(void);
-        void searchContacts();
-};
+	if (argc == 1){
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+		return 0;
+	}
+	std::locale loc;
+	int j;
+	int i;
+	for (j = 1; j < argc; j++){
+		for (i = 0; argv[j][i]; i++){
+			std::cout << std::toupper(argv[j][i], loc);
+		}
+	}
+	std::cout << std::endl;
+ 	return 0;
+}
