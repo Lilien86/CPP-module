@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 13:20:56 by lauger            #+#    #+#             */
-/*   Updated: 2024/10/14 09:16:31 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/23 08:39:09 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,13 @@ int main()
 			break;
 		}
 
-		if (command == "ADD") {
-			phoneBook.addContact();
+		if (command == "ADD")
+		{
+			if (phoneBook.addContact() == -1)
+				return 0;
 		} else if (command == "SEARCH") {
-			phoneBook.searchContacts();
+			if (phoneBook.searchContacts() == -1)
+				return 0;
 		} else if (command == "EXIT") {
 			break;
 		} else {

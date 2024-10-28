@@ -6,12 +6,10 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 13:46:29 by lauger            #+#    #+#             */
-/*   Updated: 2024/10/14 09:31:54 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/14 09:20:02 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef CONTACT_HPP
-# define CONTACT_HPP
 #include <iostream>
 #include <iomanip>
 
@@ -30,4 +28,3 @@ class Contact
 		std::string get_values_contact(int i) const;
 };
 
-#endif

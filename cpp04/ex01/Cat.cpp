@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:35:16 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/14 16:31:36 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/15 14:44:47 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ Cat::Cat(const Cat &rhs)
 Cat::~Cat()
 {
 	std::cout << "Cat Destructor" << std::endl;
+	delete _brain;
 }
 
 Cat &Cat::operator=(const Cat &rhs)

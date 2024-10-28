@@ -1,44 +1,22 @@
 NAME = ./megaphone
+CPP = /bin/c++
 
-CC = /bin/c++
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-CFLAGS = -Wextra -Werror -Wall -std=c++98
+SRCS = megaphone.cpp
 
-SRC =  megaphone.cpp
-
-OBJ_DIR = ./obj
-OBJ = $(SRC:./src/%.c=$(OBJ_DIR)/%.o)
+OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	@echo
-	@echo "$(YELLOW)Compiling source files...$(NC)"
-	@$(CC) $(OBJ) $(CFLAGS) -o $(NAME)
-	@echo "$(GREEN)Compilation is complete. Generated executable: $(NAME).$(NC)"
-	@echo
-
-$(OBJ_DIR)/%.o: ./src/%.c | $(OBJ_DIR)
-	@echo "$(YELLOW)Compiling file $<...$(NC)"
-	@$(CC) -c $< -o $@ $(CFLAGS)
-	@echo
-
-$(OBJ_DIR):
-	@/bin/mkdir -p $(OBJ_DIR)
+$(NAME): $(OBJS)
+	$(CPP) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
 clean:
-	@echo
-	@echo "$(YELLOW)Cleaning object files...$(NC)"
-	@/bin/rm -rf $(OBJ_DIR)
-	@echo "$(GREEN)Cleaning complete.$(NC)"
-	@echo
+	rm -rf $(OBJS)
 
 fclean: clean
-	@echo
-	@echo "$(YELLOW)Removing executable $(NAME)...$(NC)"
-	@/bin/rm -f $(NAME)
-	@echo "$(GREEN)Removal complete.$(NC)"
-	@echo
+	rm -f $(NAME)
 
 re: fclean all
 
