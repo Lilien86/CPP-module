@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 15:07:55 by lauger            #+#    #+#             */
-/*   Updated: 2024/10/14 09:59:16 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/29 13:02:34 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void replaceSubstring(std::string &content, const std::string &s1, const std::st
 		content.insert(pos, s2);
 		pos += s2.length();
 	}
+	return ;
 }
 
 void writeFileContent(const std::string &filename, const std::string &content) {
@@ -48,6 +49,7 @@ void writeFileContent(const std::string &filename, const std::string &content) {
 		throw std::runtime_error("Error: Could not create file " + filename);
 	}
 	outputFile << content;
+	return ;
 }
 
 int main(int argc, char *argv[]) {
