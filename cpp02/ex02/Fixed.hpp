@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fixed.hpp                                          :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:31:13 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/03 12:59:36 by lauger           ###   ########.fr       */
+/*   Updated: 2024/11/04 11:29:05 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Fixed
 	private:
 		static const int _bit = 8;
 		int				_intValue;
+
 	public:
 		Fixed ();
 		Fixed (const Fixed &a);
@@ -40,10 +41,9 @@ class Fixed
 
 		int getRawBits(void) const;
 		void setRawBits(int const raw);
-
 		float toFloat(void) const;
 		int toInt(void) const;
-	
+
 		bool	operator<(Fixed const &a);
 		bool	operator>(Fixed const &a);
 		bool	operator<=(Fixed const &a);

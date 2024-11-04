@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   e00.cpp                                            :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:56:49 by marvin            #+#    #+#             */
-/*   Updated: 2024/09/30 11:56:49 by marvin           ###   ########.fr       */
+/*   Updated: 2024/11/04 11:15:12 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fixed.hpp"
+#include "Fixed.hpp"
 
 Fixed::Fixed() : _fp_value(0)
 {
 	std::cout << "Default constructor called" << std::endl;
+	return ;
 }
 
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
+	return ;
 }
 
 Fixed::Fixed (const Fixed &a)
 {
 	*this = a;
 	std::cout << "Copy constructor called" << std::endl;
+	return ;
 }
 
 void	Fixed::setRawBits(int const raw)
 {
-	_fp_value = raw;
+	this->_fp_value = raw;
+	return ;
 }
 
 int		Fixed::getRawBits(void) const

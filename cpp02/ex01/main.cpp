@@ -6,11 +6,11 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:10:50 by lauger            #+#    #+#             */
-/*   Updated: 2024/10/03 14:14:45 by lauger           ###   ########.fr       */
+/*   Updated: 2024/11/04 10:32:11 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fixed.hpp"
+#include "Fixed.hpp"
 #include <iostream>
 
 int main( void )
