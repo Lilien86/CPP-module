@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:10:27 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/14 11:40:50 by lauger           ###   ########.fr       */
+/*   Updated: 2024/11/04 11:42:54 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,16 @@
 # define ScavTrap_HPP
 #include "./ClapTrap.hpp"
 
-class ScavTrap: public ClapTrap //child class
+class ScavTrap: public ClapTrap
 {
-    private:
-
-    public:
-        ScavTrap();
-        ScavTrap(const std::string& name);
-        ScavTrap(const ScavTrap &rhs);
-        ScavTrap &operator=(const ScavTrap &rhs);
-        ~ScavTrap();
-        void guardGate();
+	public:
+		ScavTrap();
+		ScavTrap(const std::string& name);
+		ScavTrap(const ScavTrap &rhs);
+		ScavTrap &operator=(const ScavTrap &rhs);
+		~ScavTrap();
+		void guardGate();
+	private:
 
 };
 
