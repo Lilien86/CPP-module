@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:15:53 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/04 12:56:26 by lauger           ###   ########.fr       */
+/*   Updated: 2024/11/05 12:23:20 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 int main()
 {
-	FragTrap a("Lilien");
+	FragTrap a("Lilien"); 
 	FragTrap b("Yvann");
+	FragTrap c(b);
+	FragTrap d = a;
 	a.highFivesGuys();
 	b.highFivesGuys();
 	a.attack("Yvann");

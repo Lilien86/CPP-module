@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 09:45:31 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/08 09:45:31 by marvin           ###   ########.fr       */
+/*   Updated: 2024/11/05 11:52:02 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 
 int main(void)
 {
-    ClapTrap a("Lilien");
-    a.attack("Yvann");
-    a.takeDamage(5);
-	a.beRepaired(5);
-    return 0;
+	ClapTrap a("Lilien");
+	ClapTrap b("Yvann");
+	a.attack("Yvann");
+	b.takeDamage(5);
+	b.beRepaired(5);
+	ClapTrap c;
+	c = b;
+	ClapTrap d(a);
+	return 0;
 }
