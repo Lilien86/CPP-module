@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:31:13 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/04 10:21:17 by lauger           ###   ########.fr       */
+/*   Updated: 2024/11/05 14:08:52 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class Fixed
 		void   setRawBits(int const raw);
 	
 	private:
-		static const int	_frac_bit_nb = 8;
-		int					_fp_value;
+		static const int	_bit = 8;
+		int					_intValue;
 };
 
 #endif

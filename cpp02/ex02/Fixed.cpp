@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:56:49 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/04 11:29:57 by lauger           ###   ########.fr       */
+/*   Updated: 2024/11/05 15:06:37 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ Fixed::Fixed() : _intValue(0)
 Fixed::Fixed (const int int_value)
 {
 	//std::cout << "Int constructor called" << std::endl;
-	this->_intValue = int_value<<this->_bit;
+	this->_intValue = int_value << this->_bit;
 }
 
 Fixed::Fixed (const float float_value)
 {
 	//std::cout << "float constructor called" << std::endl;
-	this->_intValue = roundf(float_value * (1<<this->_bit));
+	this->_intValue = roundf(float_value * (1 << this->_bit));
 }
 
 Fixed::~Fixed()
@@ -46,22 +46,23 @@ Fixed::Fixed (const Fixed &a)
 
 void	Fixed::setRawBits(int const raw)
 {
-	this->_intValue = raw;
+	this->_intValue = raw << this->_bit;
+	return ;
 }
 
 int		Fixed::getRawBits(void) const
 {
-	return this->_intValue;
+	return _intValue;
 }
 
 float	Fixed::toFloat(void) const
 {
-	return ((float)this->_intValue / (float)(1<<this->_bit));
+	return ((float)this->_intValue / (float)(1 << this->_bit));
 }
 
 int	Fixed::toInt(void) const
 {
-	return this->_intValue >> this->_bit;
+	return (this->_intValue >> this->_bit);
 }
 
 //#############################################################

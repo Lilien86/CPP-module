@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 09:03:33 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/05 12:22:07 by lauger           ###   ########.fr       */
+/*   Updated: 2024/11/05 14:32:51 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class ClapTrap
 		ClapTrap();
 		ClapTrap(const ClapTrap &rhs);
 		ClapTrap(const std::string& name);
-		~ClapTrap();
+		virtual ~ClapTrap();
 
 		virtual ClapTrap &operator=(const ClapTrap &rhs);
 

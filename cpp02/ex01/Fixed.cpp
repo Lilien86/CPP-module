@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:56:49 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/04 11:27:08 by lauger           ###   ########.fr       */
+/*   Updated: 2024/11/05 15:06:35 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ Fixed::Fixed() : _intValue(0)
 Fixed::Fixed (const int int_value)
 {
 	std::cout << "Int constructor called" << std::endl;
-	_intValue = int_value<<this->_bit;
+	_intValue = int_value << this->_bit;
 }
 
 Fixed::Fixed (const float float_value)
 {
 	std::cout << "float constructor called" << std::endl;
-	_intValue = roundf(float_value * (1<<this->_bit));
+	_intValue = roundf(float_value * (1 << this->_bit));
 }
 
 Fixed::~Fixed()
@@ -36,13 +36,13 @@ Fixed::~Fixed()
 
 Fixed::Fixed (const Fixed &a)
 {
-	this->_intValue = a._intValue;
 	std::cout << "Copy constructor called" << std::endl;
+	this->_intValue = a._intValue;
 }
 
 void	Fixed::setRawBits(int const raw)
 {
-	_intValue = raw;
+	this->_intValue = raw << this->_bit;
 }
 
 int		Fixed::getRawBits(void) const
@@ -52,12 +52,12 @@ int		Fixed::getRawBits(void) const
 
 float	Fixed::toFloat(void) const
 {
-	return ((float)this->_intValue / (1<<this->_bit));
+	return ((float)this->_intValue / (float)(1 << this->_bit));
 }
 
 int	Fixed::toInt(void) const
 {
-	return (round(this->_intValue / (1<<this->_bit)));
+	return (this->_intValue >> this->_bit);
 }
 
 Fixed	&Fixed::operator=(Fixed const &rhs)
