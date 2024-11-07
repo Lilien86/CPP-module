@@ -19,6 +19,7 @@ WrongAnimal::WrongAnimal()
 
 WrongAnimal::WrongAnimal(const WrongAnimal &rhs)
 {
+	std::cout << "WrongAnimal Copy Constructor" << std::endl;
 	*this = rhs;
 }
 
@@ -29,16 +30,16 @@ WrongAnimal::~WrongAnimal()
 
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &rhs)
 {
-	*this = rhs;
+	this->type = rhs.getType();
 	return (*this);
 }
 
 std::string WrongAnimal::getType() const
 {
-	return this->_type;
+	return this->type;
 }
 
 void    WrongAnimal::makeSound() const
 {
-	std::cout << "WrongAnimal" << " ~ brrrrrrr ~" << std::endl;
+	std::cout << " ~ BRRRRRR ~" << std::endl;
 }

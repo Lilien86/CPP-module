@@ -18,11 +18,11 @@
 class WrongAnimal
 {
 	protected:
-		std::string _type;
+		std::string type;
 	public:
 		WrongAnimal();
-		~WrongAnimal();
 		WrongAnimal(const WrongAnimal &rhs);
+		virtual ~WrongAnimal();
 		WrongAnimal &operator=(const WrongAnimal &rhs);
 		std::string getType() const;
 		virtual void makeSound() const;

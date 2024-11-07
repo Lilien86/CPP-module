@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:35:18 by marvin            #+#    #+#             */
-/*   Updated: 2024/10/14 12:00:28 by lauger           ###   ########.fr       */
+/*   Updated: 2024/11/07 10:09:59 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Dog: public Animal
 	public:
 		Dog();
 		Dog(const Dog &rhs);
-		~Dog();
+		virtual ~Dog();
 		Dog &operator=(const Dog &rhs);
 		void makeSound() const;
 };
