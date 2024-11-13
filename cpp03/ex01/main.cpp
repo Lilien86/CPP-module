@@ -6,7 +6,7 @@
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 11:15:53 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/04 12:14:50 by lauger           ###   ########.fr       */
+/*   Updated: 2024/11/07 12:47:51 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,17 @@
 int main()
 {
 	ScavTrap ogi("Originel");
-	ScavTrap a("Lilien");
-	ogi = a;
-	ScavTrap b("Yvann");
-	a.attack("Yvann");
-	b.takeDamage(10);
-	b.beRepaired(5);
-	a.guardGate();
-	b.guardGate();
-	a.attack("Yvann");
+	ClapTrap *heap = new ScavTrap("heap");
+	ScavTrap lilien("Lilien");
+	ogi = lilien;
+	ScavTrap yvann("Yvann");
+	heap->attack("stack");
+	lilien.attack("Yvann");
+	yvann.takeDamage(10);
+	yvann.beRepaired(5);
+	lilien.guardGate();
+	yvann.guardGate();
+	lilien.attack("Yvann");
+	delete heap;
 	return 0;
 }
