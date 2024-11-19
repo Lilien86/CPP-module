@@ -6,7 +6,7 @@ Cure::Cure(): AMateria("cure")
 	return ;
 }
 
-Cure::Cure(const Cure &cpy)
+Cure::Cure(const Cure &cpy): AMateria("cure")
 {
 	std::cout << "Cure material is created" << std::endl;
 	*this = cpy;

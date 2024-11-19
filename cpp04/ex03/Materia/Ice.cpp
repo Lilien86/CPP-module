@@ -6,7 +6,7 @@ Ice::Ice(): AMateria("ice")
 	return ;
 }
 
-Ice::Ice(const Ice &cpy)
+Ice::Ice(const Ice &cpy) : AMateria(cpy)
 {
 	// std::cout << "Ice material is created" << std::endl;
 	*this = cpy;

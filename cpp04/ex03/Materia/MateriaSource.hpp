@@ -10,6 +10,10 @@ class MateriaSource: public IMateriaSource
 
 		virtual void learnMateria(AMateria*);
 		virtual AMateria* createMateria(std::string const & type);
+	
+	private:
+		AMateria	*_source[4];
+		int			_count;
 
 };
 
