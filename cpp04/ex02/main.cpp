@@ -20,6 +20,8 @@
 int main()
 {
 	Animal *animal[10];
+	//Animal obj;
+	//(void)obj;
 
 	for (int i = 0; i < 5	; i++)
 		animal[i] = new Dog();

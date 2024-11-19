@@ -1,45 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:33:18 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/13 11:35:39 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/10 09:19:38 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./Animal.hpp"
+#include "./WrongAnimal.hpp"
 
-Animal::Animal()
+WrongAnimal::WrongAnimal()
 {
-	// std::cout << "- Animal is created" << std::endl;
+	std::cout << "WrongAnimal Constructor" << std::endl;
 }
 
-Animal::Animal(const Animal &rhs)
+WrongAnimal::WrongAnimal(const WrongAnimal &rhs)
 {
+	std::cout << "WrongAnimal Copy Constructor" << std::endl;
 	*this = rhs;
 }
 
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
-	// std::cout << "- Animal is destroyed" << std::endl;
+	std::cout << "WrongAnimal Destructor" << std::endl;
 }
 
-Animal &Animal::operator=(const Animal &rhs)
+WrongAnimal &WrongAnimal::operator=(const WrongAnimal &rhs)
 {
-	this->_type = rhs._type;
+	this->type = rhs.getType();
 	return (*this);
 }
 
-std::string Animal::getType() const
+std::string WrongAnimal::getType() const
 {
-	return this->_type;
+	return this->type;
 }
 
-void    Animal::makeSound() const
+void    WrongAnimal::makeSound() const
 {
-	std::cout << "Animal" << " ~ brrrrrrr ~" << std::endl;
+	std::cout << " ~ BRRRRRR ~" << std::endl;
 }
-

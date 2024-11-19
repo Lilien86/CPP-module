@@ -1,47 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lauger <lauger@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:35:16 by marvin            #+#    #+#             */
-/*   Updated: 2024/11/13 12:41:44 by lauger           ###   ########.fr       */
+/*   Updated: 2024/10/10 09:19:47 by lauger           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat()
+WrongCat::WrongCat()
 {
-	// std::cout << "-- Cat is created" << std::endl;
-	this->_type = "Cat";
+	std::cout << "WrongCat Constructor" << std::endl;
+	this->type = "WrongCat";
 	this->_brain = new Brain();
 }
 
-Cat::Cat(const Cat &rhs)
+WrongCat::WrongCat(const WrongCat &rhs)
 {
+	std::cout << "WrongCat Copy Constructor" << std::endl;
 	*this = rhs;
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-	std::cout << "-- Cat Destructor" << std::endl;
+	std::cout << "WrongCat Destructor" << std::endl;
 	delete _brain;
 }
 
-Cat &Cat::operator=(const Cat &rhs)
+WrongCat &WrongCat::operator=(const WrongCat &rhs)
 {
-	this->_brain = rhs._brain;
+	this->type = rhs.getType();
 	return (*this);
 }
 
-void    Cat::makeSound() const
+void    WrongCat::makeSound() const
 {
-	std::cout << this->_type << " ~ miaouuuu ~" << std::endl;
+	std::cout << " ~ MIAOUUUU ~" << std::endl;
 }
 
-Brain	*Cat::getBrain() const
+Brain	*WrongCat::getBrain() const
 {
 	return this->_brain;
 }
