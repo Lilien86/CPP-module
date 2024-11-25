@@ -14,7 +14,7 @@
 
 Cat::Cat()
 {
-	// std::cout << "-- Cat is created" << std::endl;
+	std::cout << "-- Cat is created" << std::endl;
 	this->_type = "Cat";
 	this->_brain = new Brain();
 }

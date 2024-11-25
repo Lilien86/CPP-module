@@ -8,7 +8,7 @@ Cure::Cure(): AMateria("cure")
 
 Cure::Cure(const Cure &cpy): AMateria("cure")
 {
-	std::cout << "Cure material is created" << std::endl;
+	// std::cout << "Cure material is created" << std::endl;
 	*this = cpy;
 	return ;
 }
@@ -21,7 +21,7 @@ Cure::~Cure()
 
 Cure &Cure::operator=(const Cure &rhs)
 {
-	std::cout << "Cure assignement operator is called" << std::endl;
+	// std::cout << "Cure assignement operator is called" << std::endl;
 	this->_type = rhs._type;
 	return (*this);
 }

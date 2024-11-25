@@ -14,7 +14,7 @@
 
 Animal::Animal()
 {
-	// std::cout << "- Animal is created" << std::endl;
+	std::cout << "- Animal is created" << std::endl;
 }
 
 Animal::Animal(const Animal &rhs)
@@ -24,7 +24,7 @@ Animal::Animal(const Animal &rhs)
 
 Animal::~Animal()
 {
-	// std::cout << "- Animal is destroyed" << std::endl;
+	std::cout << "- Animal is destroyed" << std::endl;
 }
 
 Animal &Animal::operator=(const Animal &rhs)

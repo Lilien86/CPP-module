@@ -6,6 +6,13 @@ Materia::Materia()
 	return ;
 }
 
+Materia::Materia(const Materia &cpy)
+{
+	// std::cout << "Materia is created with NULL type" << std::endl;
+	*this = cpy;
+	return ;
+}
+
 Materia::Materia(const std::string &type)
 {
 	// std::cout << "Materia is created with NULL type" << std::endl;

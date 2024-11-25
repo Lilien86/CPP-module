@@ -1,9 +1,9 @@
 NAME = ./ex03
 CXX = /bin/c++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp ./Materia/AMateria.cpp ./Materia/Materia.cpp ./Materia/Ice.cpp ./Materia/Cure.cpp ICharacter.cpp Character.cpp ./Materia/IMateriaSource.cpp ./Materia/MateriaSource.cpp
+SRCS = main.cpp AMateria.cpp Materia.cpp Ice.cpp Cure.cpp ICharacter.cpp Character.cpp IMateriaSource.cpp MateriaSource.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

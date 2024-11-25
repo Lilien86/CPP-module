@@ -14,7 +14,7 @@
 
 Dog::Dog()
 {
-	// std::cout << "-- Dog is created" << std::endl;
+	std::cout << "-- Dog is created" << std::endl;
 	this->_type = "Dog";
 	_brain = new Brain();
 }

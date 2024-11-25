@@ -14,7 +14,7 @@
 
 Brain::Brain()
 {
-	// std::cout << "--- Brain is created" << std::endl;
+	std::cout << "--- Brain is created" << std::endl;
 	return ;
 }
 

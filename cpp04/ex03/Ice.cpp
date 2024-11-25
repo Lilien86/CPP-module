@@ -21,7 +21,7 @@ Ice::~Ice()
 
 Ice &Ice::operator=(const Ice &rhs)
 {
-	std::cout << "Ice assignement operator is called" << std::endl;
+	// std::cout << "Ice assignement operator is called" << std::endl;
 	this->_type = rhs._type;
 	return (*this);
 }
