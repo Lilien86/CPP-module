@@ -28,12 +28,12 @@ WrongCat::WrongCat(const WrongCat &rhs)
 WrongCat::~WrongCat()
 {
 	std::cout << "WrongCat Destructor" << std::endl;
-	delete _brain;
 }
 
 WrongCat &WrongCat::operator=(const WrongCat &rhs)
 {
 	this->type = rhs.getType();
+	this->_brain = rhs._brain;
 	return (*this);
 }
 

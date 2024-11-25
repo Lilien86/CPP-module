@@ -27,11 +27,11 @@ Dog::Dog(const Dog &rhs)
 Dog::~Dog()
 {
 	std::cout << "-- Dog Destructor" << std::endl;
-	delete(_brain);
 }
 
 Dog &Dog::operator=(const Dog &rhs)
 {
+	this->_type = rhs._type;
 	this->_brain = rhs._brain;
 	return (*this);
 }
@@ -45,9 +45,3 @@ Brain	*Dog::getBrain() const
 {
 	return this->_brain;
 }
-
-// void	Dog::setBrain(std::string &idea, int i)
-// {
-// 	this->_brain[i] = idea;
-// 	return ;
-// }

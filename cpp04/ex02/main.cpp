@@ -40,11 +40,13 @@ int main()
 	wrongCat.getBrain()->setIdeas(2, "~~ I love apple pen");
 	wrongCat.getBrain()->setIdeas(3, "~~ Hoooo miam miam miaouuu");
 	wrongCat.getBrain()->setIdeas(99, "~~ Stop it please");
-	std::cout << "\x1B[32m" << wrongCat.getBrain()->getIdeas(0) << "\x1B[0m" << std::endl << std::endl;
-	std::cout << "\x1B[32m" << wrongCat.getBrain()->getIdeas(1) << "\x1B[0m" << std::endl << std::endl;
-	std::cout << "\x1B[32m" << wrongCat.getBrain()->getIdeas(2) << "\x1B[0m" << std::endl << std::endl;
-	std::cout << "\x1B[32m" << wrongCat.getBrain()->getIdeas(3) << "\x1B[0m" << std::endl << std::endl;
-	std::cout << "\x1B[32m" << wrongCat.getBrain()->getIdeas(99) << "\x1B[0m" << std::endl << std::endl;
+	WrongCat bigWrongCat = wrongCat;
+	std::cout << bigWrongCat.getType() << ": " << "\x1B[33m" << bigWrongCat.getBrain()->getIdeas(0) << "\x1B[0m" << std::endl;
+	std::cout << wrongCat.getType() << ": " << "\x1B[32m" << wrongCat.getBrain()->getIdeas(0) << "\x1B[0m" << std::endl;
+	std::cout << wrongCat.getType() << ": " << "\x1B[32m" << wrongCat.getBrain()->getIdeas(1) << "\x1B[0m" << std::endl;
+	std::cout << wrongCat.getType() << ": " << "\x1B[32m" << wrongCat.getBrain()->getIdeas(2) << "\x1B[0m" << std::endl;
+	std::cout << wrongCat.getType() << ": " << "\x1B[32m" << wrongCat.getBrain()->getIdeas(3) << "\x1B[0m" << std::endl;
+	std::cout << wrongCat.getType() << ": " << "\x1B[32m" << wrongCat.getBrain()->getIdeas(99) << "\x1B[0m" << std::endl;
 
 	for (int i = 0; i < 10; i++)
 		delete animal[i];

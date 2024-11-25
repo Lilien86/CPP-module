@@ -27,11 +27,11 @@ Cat::Cat(const Cat &rhs)
 Cat::~Cat()
 {
 	std::cout << "-- Cat Destructor" << std::endl;
-	delete _brain;
 }
 
 Cat &Cat::operator=(const Cat &rhs)
 {
+	this->_type = rhs._type;
 	this->_brain = rhs._brain;
 	return (*this);
 }
