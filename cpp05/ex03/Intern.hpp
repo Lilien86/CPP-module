@@ -1,6 +1,9 @@
 #ifndef INTERN_HPP
 #define INTERN_HPP
 
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 class Intern
 {
@@ -11,6 +14,6 @@ class Intern
 		Intern &operator=(const Intern &rhs);
 
 		AForm	*makeForm(const std::string formName, const std::string target);
-}
+};
 
 #endif

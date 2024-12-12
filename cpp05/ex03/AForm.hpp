@@ -2,12 +2,12 @@
 #define AFORM_HPP
 
 #include <iostream>
-#include "Bureaucrat.hpp"
 #include <stdlib.h>
 #include <cstdlib>
 #include <ctime>
 #include <exception>
 #include <stdexcept>
+#include "Bureaucrat.hpp"
 
 const std::string C_RESET = "\033[0m";
 const std::string C_BOLD = "\033[1m";

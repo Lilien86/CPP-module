@@ -3,6 +3,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int     main(void)
 {
@@ -25,15 +26,19 @@ int     main(void)
 		ShrubberyCreationForm A("Tarouk");
 		RobotomyRequestForm	B("Romarin");
 		PresidentialPardonForm	C("Edismoi");
-		std::cout << A << std::endl;
-		std::cout << B << std::endl;
-		A.beSigned(c);
-		B.beSigned(c);
-		C.beSigned(c);
-		A.execute(c);
-		B.execute(c);
-		B.execute(c);
-		C.execute(c);
+		Intern someRandomIntern;
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm("robotomy request", "Romarin");
+		(void)rrf;
+		// std::cout << A << std::endl;
+		// std::cout << B << std::endl;
+		// A.beSigned(c);
+		// B.beSigned(c);
+		// C.beSigned(c);
+		// A.execute(c);
+		// B.execute(c);
+		// B.execute(c);
+		// C.execute(c);
 	} catch(const std::exception& e) {
 		std::cerr << "Exception caught: " << e.what() << '\n';
 	}
