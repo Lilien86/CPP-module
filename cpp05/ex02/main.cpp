@@ -19,21 +19,28 @@ int     main(void)
 		std::cerr << "Exception caught: " << e.what() << '\n';
 	}
 	std::cout << std::endl;
-	std::cout << std::endl; 
+	std::cout << std::endl;
 	try {
-		Bureaucrat c("Chris", 5);
+		Bureaucrat c("-BOSS-Chris", 1);
+		Bureaucrat d("-NOOB-otherChris", 125);
 		ShrubberyCreationForm A("Tarouk");
 		RobotomyRequestForm	B("Romarin");
 		PresidentialPardonForm	C("Edismoi");
 		std::cout << A << std::endl;
 		std::cout << B << std::endl;
-		A.beSigned(c);
-		B.beSigned(c);
-		C.beSigned(c);
+		std::cout << C_MAGENTA << std::endl <<  "~~~sign form~~~" << std::endl;
+		c.signForm(A);
+		c.signForm(B);
+		c.signForm(C);
+		// d.signForm(C);
+
+		std::cout << C_MAGENTA << std::endl << "~~~exec form~~~" << C_WHITE << std::endl;
+		// A.execute(d);
 		A.execute(c);
 		B.execute(c);
 		B.execute(c);
 		C.execute(c);
+		std::cout << std::endl;
 	} catch(const std::exception& e) {
 		std::cerr << "Exception caught: " << e.what() << '\n';
 	}

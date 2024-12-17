@@ -36,12 +36,12 @@ AForm	*Intern::makeForm(const std::string formName, const std::string target)
 	AForm	*_return = 0;
 	for (int i = 0; i < 3; i++)
 		if (formName == requests[i])
-			ret = forms[i];
+			_return = forms[i];
 		else
 			delete forms[i];
 	
-	if (ret)
-		std::cout << C_BOLD << "Intern creates " << formName << "for " << target << C_WHITE <<  std::endl;
+	if (_return)
+		std::cout << C_GREEN << "Intern creates " << formName << "for " << target << C_WHITE <<  std::endl;
 	else
 		std::cout	<< C_RED << "Intern can't create a " << formName << C_WHITE << std::endl;
 

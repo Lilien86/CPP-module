@@ -4,28 +4,6 @@
 int     main(void)
 {
 	try {
-		Bureaucrat a("Lilien", 0);
-	} catch(const std::exception& e) {
-		std::cerr << "Exception caught: " << e.what() << '\n';
-	}
-	try {
-		Bureaucrat b("Yvann", 151);
-	} catch(const std::exception& e) {
-		std::cerr << "Exception caught: " << e.what() << '\n';
-	}
-	try {
-		Bureaucrat c("Chris", 5);
-		std::cout << c << std::endl;
-		c.incrementGrade();
-		std::cout << c << std::endl;
-		c.decrementGrade();
-		std::cout << c << std::endl;
-	} catch(const std::exception& e) {
-		std::cerr << "Exception caught: " << e.what() << '\n';
-	}
-
-
-	try {
 		Form f1("A1", 0, 3);
 	} catch(const std::exception& e) {
 		std::cerr << "Exception caught: " << e.what() << '\n';
@@ -36,10 +14,15 @@ int     main(void)
 		std::cerr << "Exception caught: " << e.what() << '\n';
 	}
 	try {
-		Bureaucrat c("Chris", 5);
-		Form f3("A3", 4, 3);
+		Bureaucrat c("-BOSS-Chris", 1);
+		Bureaucrat d("-NOOB-otherChris", 125);
+		Bureaucrat e("-MANAGER-litleChris", 5);
+		Form f3("A3", 50, 50);
+		Form f4("A3", 100, 100);
 		std::cout << f3 << std::endl;
-		f3.beSigned(c);
+		c.signForm(f3);
+		d.signForm(f4);
+		e.signForm(f3);
 	} catch(const std::exception& e) {
 		std::cerr << "Exception caught: " << e.what() << '\n';
 	}

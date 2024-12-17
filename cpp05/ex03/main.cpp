@@ -8,41 +8,23 @@
 int     main(void)
 {
 	try {
-		ShrubberyCreationForm f1("lilien");
-	} catch(const std::exception& e) {
-		std::cerr << "Exception caught: " << e.what() << '\n';
-	}
-	std::cout << std::endl;
-	std::cout << std::endl; 
-	try {
-		ShrubberyCreationForm f2("yvann");
-	} catch(const std::exception& e) {
-		std::cerr << "Exception caught: " << e.what() << '\n';
-	}
-	std::cout << std::endl;
-	std::cout << std::endl; 
-	try {
-		Bureaucrat c("Chris", 5);
+		Bureaucrat c("-BOSS-Chris", 1);
 		ShrubberyCreationForm A("Tarouk");
 		RobotomyRequestForm	B("Romarin");
 		PresidentialPardonForm	C("Edismoi");
 		Intern someRandomIntern;
 		AForm* rrf;
 		rrf = someRandomIntern.makeForm("robotomy request", "Romarin");
-		(void)rrf;
-		// std::cout << A << std::endl;
-		// std::cout << B << std::endl;
-		// A.beSigned(c);
-		// B.beSigned(c);
-		// C.beSigned(c);
-		// A.execute(c);
-		// B.execute(c);
-		// B.execute(c);
-		// C.execute(c);
+		delete rrf;
+		rrf = someRandomIntern.makeForm("shrubbery request", "Tarouk");
+		delete rrf;
+		rrf = someRandomIntern.makeForm("presidential request", "Edismoi");
+		delete rrf;
+		rrf = someRandomIntern.makeForm("bloupbloup", "Edismoi");
+		delete rrf;
 	} catch(const std::exception& e) {
 		std::cerr << "Exception caught: " << e.what() << '\n';
 	}
 
 	return 0;
-	
 }

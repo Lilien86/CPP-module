@@ -1,4 +1,5 @@
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 Form::Form(const std::string &name, int signRequirement, int execRequirement): _name(name), _isSigned(false), _signRequirement(signRequirement), _execRequirement(execRequirement)
 {
@@ -41,13 +42,20 @@ const char *Form::GradeTooHighException::what() const throw()
 	return "grade too high";
 }
 
+const char *Form::FormAlreadySigned::what() const throw()
+{
+	return "Form is already signed";
+}
 void	Form::beSigned(const Bureaucrat &b)
 {
 	if (b.getGrade() > this->_signRequirement)
 		throw Form::GradeTooHighException();
+	if (this->_isSigned)
+        throw Form::FormAlreadySigned();
 	this->_isSigned = true;
 	return ;
 }
+
 
 int	Form::getExecRequirement() const
 {
@@ -59,15 +67,16 @@ int	Form::getSignRequirement() const
 	return this->_signRequirement;
 }
 
+
 const std::string &Form::getName() const
 {
 	return this->_name;
 }
 
 std::ostream	&operator<<(std::ostream &o, const Form &rhs) {
-	o << rhs.getName() << " form"
+	o << C_BLUE << rhs.getName() << " form"
 	<< " sign requirement " << rhs.getSignRequirement()
-	<< " and exec requirement " << rhs.getExecRequirement();
+	<< " and exec requirement " << rhs.getExecRequirement() << C_WHITE;
 	return o;
 }
 

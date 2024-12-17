@@ -1,4 +1,5 @@
 #include "AForm.hpp"
+#include "Bureaucrat.hpp"
 
 AForm::AForm(const std::string &name, int signRequirement, int execRequirement): _name(name), _isSigned(false), _signRequirement(signRequirement), _execRequirement(execRequirement)
 {
@@ -41,15 +42,17 @@ const char *AForm::GradeTooHighException::what() const throw()
 	return "grade too high";
 }
 
-const char *AForm::FormNotSignedException::what() const throw()
+const char *AForm::FormAlreadySigned::what() const throw()
 {
-	return "form is already signed";
+	return "Form is already signed";
 }
 
-void	AForm::beSigned(const Bureaucrat &b)
+void	AForm::beSigned(Bureaucrat &b)
 {
 	if (b.getGrade() > this->_signRequirement)
 		throw AForm::GradeTooHighException();
+	if (this->_isSigned)
+		throw AForm::FormAlreadySigned();
 	this->_isSigned = true;
 	return ;
 }
@@ -57,14 +60,14 @@ void	AForm::beSigned(const Bureaucrat &b)
 int	AForm::getExecRequirement() const { return this->_execRequirement; }
 int	AForm::getSignRequirement() const { return this->_signRequirement; }
 const std::string &AForm::getName() const { return this->_name; }
+
 bool AForm::isSigned() const { return _isSigned; }
 
 std::ostream	&operator<<(std::ostream &o, const AForm &rhs) {
 	o << C_BLUE << "AForm " << rhs.getName() << " ("
-      << (rhs.isSigned() ? "Signed" : "Not Signed") << "), "
-      << "Grade to sign: " << rhs.getSignRequirement() << ", "
-      << "Grade to execute: " << rhs.getExecRequirement() << C_WHITE;
-    return o;
+	  << (rhs.isSigned() ? "Signed" : "Not Signed") << "), "
+	  << "Grade to sign: " << rhs.getSignRequirement() << ", "
+	  << "Grade to execute: " << rhs.getExecRequirement() << C_WHITE;
+	return o;
 
 }
-

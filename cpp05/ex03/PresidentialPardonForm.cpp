@@ -1,12 +1,12 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string &target): AForm("form", 145, 137), _target(target)
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target): AForm("form", 25, 5), _target(target)
 {
 	std::cout << "PresidentialPardonForm is created" << std::endl;
 	return ;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &cpy): AForm("form", 145, 137), _target("")
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &cpy): AForm("form", 25, 5), _target("")
 {
 	*this = cpy;
 	std::cout << "PresidentialPardonForm has been copied" << std::endl;

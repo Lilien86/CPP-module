@@ -1,10 +1,10 @@
-NAME = ./ex03
+NAME = ./ex01
 CXX = /bin/c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 
-SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
+SRCS = main.cpp ASerializer.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

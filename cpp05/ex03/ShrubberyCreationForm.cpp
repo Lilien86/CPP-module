@@ -1,12 +1,12 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target): AForm("form", 72, 45), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target): AForm("form", 145, 137), _target(target)
 {
 	std::cout << "ShrubberyCreationForm is created" << std::endl;
 	return ;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &cpy): AForm("form", 72, 45), _target("")
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &cpy): AForm("form", 145, 137), _target("")
 {
 	*this = cpy;
 	std::cout << "ShrubberyCreationForm has been copied" << std::endl;
@@ -36,10 +36,10 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 	if (!ofs.is_open())
 		throw std::ios_base::failure("Failed to create file");
 
-	ofs << "    🌳   🌳   🌳\n";
-	ofs << "   🌳🌳 🌳🌳 🌳🌳\n";
-	ofs << "    🌳   🌳   🌳\n";
-	ofs << "     🌳  🌳  🌳\n";
+	ofs << "     ^^^\n";
+	ofs << "    ^^^^^\n";
+	ofs << "   ^^^^^^^\n";
+	ofs << "     |||\n";
 	ofs.close();
 
 	std::cout << executor.getName() <<  " executed " << this->getName() << std::endl;

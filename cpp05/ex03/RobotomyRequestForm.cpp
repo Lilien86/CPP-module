@@ -1,12 +1,12 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string &target): AForm("form", 145, 137), _target(target)
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target): AForm("form", 72, 45), _target(target)
 {
 	std::cout << "RobotomyRequestForm is created" << std::endl;
 	return ;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &cpy): AForm("form", 145, 137), _target("")
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &cpy): AForm("form", 72, 45), _target("")
 {
 	*this = cpy;
 	std::cout << "RobotomyRequestForm has been copied" << std::endl;

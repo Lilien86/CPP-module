@@ -23,6 +23,8 @@ const std::string C_MAGENTA = "\033[35m";
 const std::string C_CYAN = "\033[36m";
 const std::string C_WHITE = "\033[37m";
 
+class Bureaucrat;
+
 class AForm
 {
 	private:
@@ -37,13 +39,14 @@ class AForm
 		~AForm();
 
 		AForm				&operator=(const AForm &rhs);
-		void				beSigned(const Bureaucrat &b);
+		void				beSigned(Bureaucrat &b);
 		virtual void 		execute(Bureaucrat const &executor) const = 0; //virtual function
 
 		int					getExecRequirement() const;
 		int					getSignRequirement() const;
 		const std::string	&getName() const;
 		bool				isSigned() const;
+
 
 		class GradeTooHighException: public std::exception{
 		public:
@@ -55,11 +58,10 @@ class AForm
 			virtual const char* what() const throw();
 		};
 
-		class FormNotSignedException : public std::exception{
+		class FormAlreadySigned: public std::exception{
 		public:
-			virtual const char *what() const throw();
+			virtual const char* what() const throw();
 		};
-
 };
 
 std::ostream	&operator<<(std::ostream &o, const AForm &rhs);
