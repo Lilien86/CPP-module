@@ -43,6 +43,12 @@ void	Span::addNumber(const int value) {
 	_list.push_back(value);
 }
 
+void	Span::addNumber(std::vector<int> &numbers) {
+	if (_list.size() + numbers.size() > max)
+		throw Span::SpanFullException();
+	_list.insert(_list.end(), numbers.begin(), numbers.end());
+}
+
 unsigned int	Span::longestSpan() const {
 	if (_list.size() < 2 )
 		throw TooSmall();
@@ -66,8 +72,8 @@ unsigned int	Span::shortestSpan() const{
 
 
 std::ostream& operator<<(std::ostream& os, const Span& span) {
-	for (auto i = span.getList().begin(); i != .end(); ++i)
+	std::vector<int>::const_iterator i;
+	for (i = span.getList()->begin(); i != span.getList()->end(); ++i)
 		os << *i << " ";
-	os << std::endl;
 	return os;
 }
