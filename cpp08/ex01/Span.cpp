@@ -18,7 +18,7 @@ Span::Span(const Span &cpy) {
 
 Span	&Span::operator=(const Span &rhs) {
 	 if ( this != &rhs ) {
-		this->_n = rhs._n;
+		this->_size = rhs._size;
 		this->_list = rhs._list;
 	}
 	return *this;
@@ -28,7 +28,7 @@ Span	&Span::operator=(const Span &rhs) {
 
 
 
-const std::list< int >* Span::getList( void ) const {
+const std::vector< int >* Span::getList( void ) const {
 	return &_list;
 }
 
@@ -40,16 +40,34 @@ const std::list< int >* Span::getList( void ) const {
 void	Span::addNumber(const int value) {
 	if (this->_list.size() > _size)
 		throw OutOfList();
-	_list.push_back( n );
+	_list.push_back(value);
 }
 
 unsigned int	Span::longestSpan() const {
-	if ( _list.size() < 2 )
+	if (_list.size() < 2 )
 		throw TooSmall();
 	return (*std::max_element(_list.begin(), _list.end() ) - *std::min_element( _list.begin(), _list.end()));
 }
 
 unsigned int	Span::shortestSpan() const{
-	if (nums.size() < 2)
+	if (_list.size() < 2)
 		throw TooSmall();
+
+	std::vector<int>	tmp = _list;
+	std::sort(tmp.begin(), tmp.end());
+
+	int	min = tmp[1] - tmp[0];
+	for (unsigned int i = 1; i < tmp.size() - 1; i++) {
+		if (tmp[i + 1] - tmp[i] < min)
+			min = tmp[i + 1] - tmp[i];
+	}
+	return min;
+}
+
+
+std::ostream& operator<<(std::ostream& os, const Span& span) {
+	for (auto i = span.getList().begin(); i != .end(); ++i)
+		os << *i << " ";
+	os << std::endl;
+	return os;
 }

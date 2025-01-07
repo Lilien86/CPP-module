@@ -1,6 +1,8 @@
 #ifndef SPAN_CPP
 #define SPAN_CPP
 
+#include <algorithm>
+#include <vector>
 #include <iostream>
 #include <exception>
 
@@ -9,7 +11,7 @@ class Span
 	private:
 		Span();
 
-		std::list<int>	_list;
+		std::vector<int>	_list;
 		unsigned int	_size;
 
 	public:
@@ -19,8 +21,7 @@ class Span
 
 		Span &operator=(const Span &rhs);
 
-		const std::list< int >* getList();
-		getSize();
+		const std::vector< int >* getList() const;
 
 		void	addNumber(const int value);
 		unsigned int	shortestSpan() const;
@@ -30,7 +31,7 @@ class Span
 		{
 			public:
 				virtual const char* what() const throw() {
-					return "List is Full";
+					return "List is full";
 				}
 		};
 
@@ -42,5 +43,7 @@ class Span
 				}
 		};
 };
+
+std::ostream& operator<<( std::ostream&, const Span& );
 
 #endif
