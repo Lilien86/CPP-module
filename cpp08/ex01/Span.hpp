@@ -24,7 +24,7 @@ class Span
 		const std::vector< int >* getList() const;
 
 		void	addNumber(const int value);
-		void	addNumber(std::list<int>::const_iterator itBegin, std::list<int>::const_iterator itEnd);
+		void	addRange(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 
 		unsigned int	shortestSpan() const;
 		unsigned int	longestSpan() const;

@@ -41,12 +41,7 @@ void	Span::addNumber(const int value) {
 	if (this->_list.size() > _size)
 		throw OutOfList();
 	_list.push_back(value);
-}
-
-void	Span::addNumber(std::vector<int> &numbers) {
-	if (_list.size() + numbers.size() > max)
-		throw Span::SpanFullException();
-	_list.insert(_list.end(), numbers.begin(), numbers.end());
+	return ;
 }
 
 unsigned int	Span::longestSpan() const {
@@ -76,4 +71,16 @@ std::ostream& operator<<(std::ostream& os, const Span& span) {
 	for (i = span.getList()->begin(); i != span.getList()->end(); ++i)
 		os << *i << " ";
 	return os;
+}
+
+void	Span::addRange(std::vector<int>::iterator iBegin, std::vector<int>::iterator iEnd)
+{
+	for (std::vector<int>::iterator it = iBegin; it != iEnd; it++) {
+		try {
+			addNumber(*it);
+		} catch(const std::exception& e) {
+			std::cerr << "error: " << e.what() << '\n';
+		}
+	}
+	return ;
 }
