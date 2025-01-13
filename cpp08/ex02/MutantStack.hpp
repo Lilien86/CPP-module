@@ -20,4 +20,6 @@ class MutantStack : public std::stack<T, std::deque<T> >
 		iterator end();
 };
 
+# include "MutantStack.tpp"
+
 # endif

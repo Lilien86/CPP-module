@@ -1,6 +1,7 @@
-#include "MutantStack.cpp"
+#include "MutantStack.hpp"
 
-int main() {
+int main()
+{
 	MutantStack<int> mstack;
 	
 	mstack.push(5);

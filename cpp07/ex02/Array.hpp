@@ -7,24 +7,24 @@
 template<typename T>
 class Array
 {
-    public:
-        Array();
-        Array(unsigned int size);
-        ~Array();
-        Array(const Array &cpy);
-        
-        Array &	operator=(Array const &rhs);
-        T		operator[](size_t size) const;
+	public:
+		Array();
+		Array(unsigned int size);
+		~Array();
+		Array(const Array &cpy);
+		
+		Array &	operator=(Array const &rhs);
+		T		operator[](size_t size) const;
 		T &		operator[](size_t size);
 
-        size_t size() const;
-        class OutOfArray : public std::exception
+		size_t size() const;
+		class OutOfArray : public std::exception
 		{
 			public:
 				virtual const char* what() const throw();
 		};
 
-    private:
+	private:
 		T *	_array;
 		size_t	_size;
 };

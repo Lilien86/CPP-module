@@ -41,6 +41,7 @@ void	Span::addNumber(const int value) {
 	if (this->_list.size() > _size)
 		throw OutOfList();
 	_list.push_back(value);
+
 	return ;
 }
 
@@ -50,7 +51,7 @@ unsigned int	Span::longestSpan() const {
 	return (*std::max_element(_list.begin(), _list.end() ) - *std::min_element( _list.begin(), _list.end()));
 }
 
-unsigned int	Span::shortestSpan() const{
+unsigned int	Span::shortestSpan() const {
 	if (_list.size() < 2)
 		throw TooSmall();
 
@@ -73,8 +74,7 @@ std::ostream& operator<<(std::ostream& os, const Span& span) {
 	return os;
 }
 
-void	Span::addRange(std::vector<int>::iterator iBegin, std::vector<int>::iterator iEnd)
-{
+void	Span::addRange(std::vector<int>::iterator iBegin, std::vector<int>::iterator iEnd) {
 	for (std::vector<int>::iterator it = iBegin; it != iEnd; it++) {
 		try {
 			addNumber(*it);
