@@ -22,10 +22,11 @@ class BitcoinExchange
 		BitcoinExchange(const std::string &file);
 		~BitcoinExchange();
 
+		void	processInfile(const std::string &infile);
+		bool	validDate(const std::string &date);
+		bool	validNumber(const std::string &nb);
+
 		std::map<std::string, double> &getDataBase();
-
-
-		
 };
 
 std::ostream& operator<<( std::ostream&, BitcoinExchange&);
