@@ -64,7 +64,8 @@
         "deque": "cpp",
         "ranges": "cpp",
         "span": "cpp",
-        "xtree": "cpp"
+        "xtree": "cpp",
+        "stack": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
