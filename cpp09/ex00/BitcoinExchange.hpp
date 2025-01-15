@@ -22,9 +22,10 @@ class BitcoinExchange
 		BitcoinExchange(const std::string &file);
 		~BitcoinExchange();
 
+		double	getRate(const std::string &date);
 		void	processInfile(const std::string &infile);
 		bool	validDate(const std::string &date);
-		bool	validNumber(const std::string &nb);
+		bool	validNumber(const double &nb);
 
 		std::map<std::string, double> &getDataBase();
 };

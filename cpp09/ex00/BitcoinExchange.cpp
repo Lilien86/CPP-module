@@ -67,9 +67,9 @@ BitcoinExchange::BitcoinExchange(const std::string &file)
 
 }
 
-bool	BitcoinExchange::validNumber(const std::string &nb)
+bool	BitcoinExchange::validNumber(const double &nb)
 {
-	if (value < 0 || value > 1000) {
+	if (nb < 0 || nb > 1000) {
 		return false;
 	}
 	return true;
@@ -87,10 +87,11 @@ bool	BitcoinExchange::validDate(const std::string &date)
 	std::string month_str = date.substr(sep1 + 1, sep2 - sep1 - 1);
 	std::string day_str = date.substr(sep2 + 1);
 	
-	double year = string_to_double(year_str);
-	double month = string_to_double(month_str);
-	double day = string_to_double(day_str);
-	// std::cout << year << ", " << month << ", " << day << std::endl;
+	int year, month, day;
+	std::istringstream year_ss(year_str), month_ss(month_str), day_ss(day_str);
+	
+	if (!(year_ss >> year) || !(month_ss >> month) || !(day_ss >> day))
+		return false;
 
 	if (year < 0 || month < 1 || month > 12 || day < 1 || day > 31)
 		return false;
@@ -107,6 +108,22 @@ bool	BitcoinExchange::validDate(const std::string &date)
 	}
 	return true;
 }
+
+double BitcoinExchange::getRate(const std::string &date)
+{
+	std::map<std::string, double>::iterator it = this->_dataBase.lower_bound(date);
+
+	if (it->first != date && it != this->_dataBase.begin()) {
+		--it;
+	}
+	if (it != this->_dataBase.end()) {
+		return it->second;
+	} else if (!this->_dataBase.empty()) {
+		return it->second;
+	}
+	return -1.0;
+}
+
 
 void	BitcoinExchange::processInfile(const std::string &infile)
 {
@@ -129,24 +146,36 @@ void	BitcoinExchange::processInfile(const std::string &infile)
 		char delimiter;
 
 		if (!(ss >> date >> delimiter >> value)) {
-			std::cerr << "Error: Unable to parse line => " << line << '\n';
+			std::cerr << "Error: Unable to parse line => " << line << std::endl;
 			continue ;
 		}
 
 		if (delimiter != '|') {
-			std::cerr << "Error: Expected '|' delimiter in line => " << line << '\n';
+			std::cerr << "Error: Expected '|' delimiter in line => " << line << std::endl;
 			continue ;
 		}
 
 		if (!validDate(date)) {
-			std::cerr << "Error: Invalid date format in line => " << line << '\n';
+			std::cerr << "Error: Invalid date format in line => " << line << std::endl;
+			continue ;
+		}
+
+		if (date < this->_dataBase.begin()->first || date > this->_dataBase.rbegin()->first) {
+			std::cerr << "Error: Date " << date << " is out of range." << std::endl;
 			continue ;
 		}
 
 		if (!validNumber(value)) {
-			std::cerr << "Error: Value " << value << " is too large or too smakk number.\n";
+			std::cerr << "Error: Value " << value << " is too large or too small number." << std::endl;
 			continue ;
 		}
+		double exchangeRate = getRate(date);
+		if (exchangeRate == -1.0) {
+			std::cerr << "Error: No exchange rate available for date => " << date << std::endl;
+			continue;
+		}
+
+		std::cout << date << " => "  << value << " = " << value * exchangeRate << std::endl;
 	}
 
 }
